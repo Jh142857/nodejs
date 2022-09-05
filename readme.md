@@ -10,3 +10,7 @@ https://www.bilibili.com/video/BV1a34y167AZ?p=9&spm_id_from=pageDriver&vd_source
 - fs文件系统模块
   - 读文件fs.readFiles
   - 写文件fs.writeFiles
+- path路径模块
+  - 拼接path.join
+  - 文件名path.basename
+  - 拓展名path.ext
