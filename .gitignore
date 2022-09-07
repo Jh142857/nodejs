@@ -2,5 +2,6 @@
 day[1-8]/*
 
 # day3/code/node_modules/anymatch/README.md
-20220907/node_modules/
-20220907/package*
+/**/node_modules/
+/**/package*
+!/20220908/itheima-tools-bestone/package.json

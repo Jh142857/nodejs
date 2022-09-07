@@ -27,5 +27,21 @@ https://www.bilibili.com/video/BV1a34y167AZ?p=9&spm_id_from=pageDriver&vd_source
   - 模块作用域
   - 向外共享：module.exports对象
   - exports和module.exports指向同一对象，但引入模块时调的是后者
+
+#### 2022.09.08
 - npm与包
   - npm install module_name
+  - npn init -y 生成 package.json
+  - npm install 会一次性安装 package.json 中的 dependencies 安装包
+  - 如果某些包旨在项目开发时有用，上线时不用，加入devDependencies中，
+    - npm i 包名 -D
+    - npm install 包名 --save-dev
+  - 切换镜像
+    - npm config get registry 查看当前镜像
+    - npm config get registry=""切换镜像地址
+  - 采用nrm工具切换镜像
+    - 安装：npn i nrm -g（表示全局包）
+    - 查看源列表：nrm ls
+    - 切换源：nrm use taobao
+  - 一般只有工具包才会当作全局包，如i5ting_toc，将md文件转化为html文件
+  - 发布npm包：npm publish
