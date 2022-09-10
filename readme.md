@@ -110,15 +110,43 @@ https://www.bilibili.com/video/BV1a34y167AZ?p=9&spm_id_from=pageDriver&vd_source
       - const parser = require('body-parser)
       - app.use(parser.urlencoded({extended:false}))
 - 跨域解决方案CORS
-- ![](20220909/images/CORS图示.png)
+ ![](20220909/images/CORS图示.png)
   - 使用：const cors = require('cors'); app.use(cors())
   - CORS响应头部
-    - ![](20220909/images/CORS响应头部-origin.png)
-    - ![](20220909/images/CORS响应头部-Headers.png)
-    - ![](20220909/images/CORS响应头部-Methods.png)
+     ![](20220909/images/CORS响应头部-origin.png)
+     ![](20220909/images/CORS响应头部-Headers.png)
+     ![](20220909/images/CORS响应头部-Methods.png)
   - CORS请求分类
-    - ![](20220909/images/CORS简单请求.png)
-    - ![](20220909/images/CORS预检请求.png)
+     ![](20220909/images/CORS简单请求.png)
+     ![](20220909/images/CORS预检请求.png)
   - JSONP与CORS同时使用注意事项
-    - ![](20220909/images/创建JSONP接口注意事项.png)
-    - ![](20220909/images/实现JSONP接口的代码.png)
+     ![](20220909/images/创建JSONP接口注意事项.png)
+     ![](20220909/images/实现JSONP接口的代码.png)
+
+#### 2022.09.10
+- 数据库-数据表-数据行-字段
+- [MySQL安装](./20220910/%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B%20-%20Windows%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85MySql/README.md)
+- SQL语句
+   ![](20220910/images/select语句.png)
+   ![](20220910/images/insert语句.png)
+   ![](20220910/images/update语句.png)
+   ![](20220910/images/delete语句.png)
+   ![](20220910/images/where子语句.png)
+  - and/or表示与/或
+   ![](20220910/images/order_by子语句.png)
+  - count(*)表示查询总数
+  - as设置别名
+- 项目中使用数据库
+  - 安装mysql库
+  - 配置mysql库
+  - 增删改查
+    
+   ![](20220910/images/配置sql库.png)
+   ![](20220910/images/查询.png)
+   ![](20220910/images/插入1.png)
+   ![](20220910/images/插入2.png)
+   ![](20220910/images/更新1.png)
+   ![](20220910/images/更新2.png)
+   ![](20220910/images/删除.png)
+   ![](20220910/images/标记删除.png)
+
