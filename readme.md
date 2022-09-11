@@ -150,3 +150,37 @@ https://www.bilibili.com/video/BV1a34y167AZ?p=9&spm_id_from=pageDriver&vd_source
    ![](20220910/images/删除.png)
    ![](20220910/images/标记删除.png)
 
+#### 2022.09.11
+- Session身份认证机制:用于服务端渲染
+  - 将信息存储到Cookie中，不具有安全性，不能存储重要数据
+  - 工作原理
+   ![](20220911/imgs/session身份认证.png)
+  - 使用
+    - 安装express-session库
+    - 导入
+    - 注册中间件:app.use(session({secret:'', resave:false, saveUninitialized:true}))
+    - 向session中存取数据:注册中间件后会有req.session对象，用来存储信息
+    - 清空：req.session.destory()
+- JWT认证机制：JSON Web Token
+  - 工作原理
+   ![](20220911/imgs/jwt身份认证.png)
+  - 组成部分：header.**payload**.signature
+  - 将JWT字符串放在HTTP请求头中的Authorization字段中，格式：`Authorization: Bearer <token>`
+  - 使用JWT
+    - 安装jsonwebtoken包,jwt = require('jsonwebtoken');
+    - 定义secret密钥
+    - 生成jwt字符串`res.send({status:200,message:'登陆成功',token:jwt.sign(obj, secretKey, {expireIn:'time'})})`
+    - jwt字符串还原为json对象：在app.js中，路由前，注册app.use(expressJWT({ secret: config.secretKey, algorithms: ['HS256'] }).unless({ path: /^\/api\// }))
+    - 注册后使用req.auth获取用户信息（obj）
+    - 捕获解析jwt失败的错误：if (err.name === 'UnauthorizedError') return res.cc("身份验证失败");
+
+#### 2022.09.11_项目
+- 实现思路见[参考文档](20220911_Project/ev_api_server.md)
+- bcryptjs加密
+  - 安装、导入
+  - 加密：userInfo.password = bcryptjs.hashSync(userInfo.password, 10);
+  - 验证/比较：
+    - const compareResult = bcryptjs.compareSync(userInfo.password, results[0].password);
+    - if (!compareResult) return res.cc("密码输入错误！");
+- 表单数据验证：使用第三方库joi
+- 2022.09.11实现了登录注册的功能
