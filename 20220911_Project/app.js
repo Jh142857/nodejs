@@ -29,6 +29,11 @@ app.use(expressJWT({ secret: config.secretKey, algorithms: ['HS256'] }).unless({
 const router = require('./router/user');
 app.use('/api', router);
 
+// 用户信息模块路由
+const userInfo = require('./router/userinfo');
+app.use('/my', userInfo);
+
+
 // 验证错误处理
 const joi = require('joi');
 app.use((err, req, res, next) => {

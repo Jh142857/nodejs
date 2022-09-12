@@ -184,3 +184,6 @@ https://www.bilibili.com/video/BV1a34y167AZ?p=9&spm_id_from=pageDriver&vd_source
     - if (!compareResult) return res.cc("密码输入错误！");
 - 表单数据验证：使用第三方库joi
 - 2022.09.11实现了登录注册的功能
+
+#### 2022.09.12_项目
+- 实现了用户信息获取、修改、重置密码、更新头像的功能

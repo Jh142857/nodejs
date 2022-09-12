@@ -11,3 +11,37 @@ module.exports.userSchema = {
         password,
     }
 }
+
+// 更新用户信息
+const id = joi.number().integer().min(1).required();
+const nickname = joi.string().required();
+const email = joi.string().email().required();
+
+module.exports.userInfoSchema = {
+    body: {
+        id,
+        nickname,
+        email
+    }
+}
+
+// 更新用户密码
+const oldPwd = password;
+const newPwd = joi.not(joi.ref('oldPwd')).concat(password);
+
+module.exports.pwdUpdateSchema = {
+    body: {
+        oldPwd,
+        newPwd
+    }
+}
+
+// dataUri() 指的是如下格式的字符串数据：
+// data:image/png;base64,VE9PTUFOWVNFQ1JFVFM=
+const avater = joi.string().dataUri().required();
+
+module.exports.avaterUpdateSchema = {
+    body: {
+        avater
+    }
+}
