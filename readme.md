@@ -3,7 +3,7 @@
 ### 参考资料 
 https://www.bilibili.com/video/BV1a34y167AZ?p=9&spm_id_from=pageDriver&vd_source=88e4bffc33a1ac3ec57e1b3c0320c0bf
 
-### 学习记录（持续更新）
+### 学习记录（已完结）
 
 #### 2022.09.05
 - nodejs如何运行js文件
@@ -187,3 +187,21 @@ https://www.bilibili.com/video/BV1a34y167AZ?p=9&spm_id_from=pageDriver&vd_source
 
 #### 2022.09.12_项目
 - 实现了用户信息获取、修改、重置密码、更新头像的功能
+
+#### 2022.09.13_项目
+- 实现了文章类别的增删改查
+- 服务器写接口的常用做法
+  - 创建项目及服务器app.js
+  - 配置相关中间件
+    - cors跨域
+    - 配置解析 `application/x-www-form-urlencoded` 格式的表单数据的中间件
+  - 初始化路由模块和路由处理函数模块，不同模块的步骤如下
+    - 在数据库中新建相关表
+    - 定义路由模块
+    - 定义路由模块处理函数
+    - 通过第三方包验证表单数据
+    - 根据请求对数据库进行增删改查
+
+### TODO
+- 大事件前端编写
+- 前端如何利用后端接口进行后台管理

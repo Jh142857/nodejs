@@ -9,6 +9,9 @@ app.use(cors());
 // 初始化解析数据
 app.use(express.urlencoded({ extended: false }))
 
+// 托管静态资源中间件
+app.use('/uploads', express.static('./uploads'));
+
 // 挂载用于优化的全局中间件
 app.use((req, res, next) => {
     res.cc = (err, status = 1) => {
@@ -33,6 +36,13 @@ app.use('/api', router);
 const userInfo = require('./router/userinfo');
 app.use('/my', userInfo);
 
+// 文章类别模块路由
+const articleCate = require('./router/articlecate');
+app.use('/my/article', articleCate);
+
+// 文章管理模块路由
+const article = require('./router/article');
+app.use('/my/article', article);
 
 // 验证错误处理
 const joi = require('joi');
