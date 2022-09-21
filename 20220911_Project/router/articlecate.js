@@ -17,7 +17,7 @@ router.post('/addcate', expressJoi(addArticleSchema), articleHandler.addArticleC
 // 验证id格式
 router.get('/delcate/:id', expressJoi(delAritcleSchema), articleHandler.deleteArticleCate);
 // 根据id文章获取文章分类数据
-router.get('/cates/:id', expressJoi(getArticleByIdSchema), articleHandler.getArticleCateById);
+router.get('/getcate/:id', expressJoi(getArticleByIdSchema), articleHandler.getArticleCateById);
 // 根据id更新文章分类数据
 router.post('/updatecate', expressJoi(updateArticleByIdSchema), articleHandler.updateArticleCateById);
 

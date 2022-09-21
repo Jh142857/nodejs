@@ -30,8 +30,8 @@ module.exports.addArticleCate = (req, res) => {
         const sqlStr = "insert into ev_article_cate set ?";
         db.query(sqlStr, req.body, (err, results) => {
             if (err) return res.cc(err);
-            if (results.affectedRows !== 1) return res.cc("增加图书失败！");
-            res.cc("添加图书成功！", 0);
+            if (results.affectedRows !== 1) return res.cc("新增文章分类失败！");
+            res.cc("新增文章分类成功！", 0);
         })
     })
 
@@ -43,8 +43,8 @@ module.exports.deleteArticleCate = (req, res) => {
     db.query("update ev_article_cate set is_delete=? where id=?", [1, req.params.id], (err, results) => {
         if (err) return res.cc(err);
         // 可以用于检测id是否存在，如果不存在，报错
-        if (results.affectedRows !== 1) return res.cc("删除图书失败！");
-        res.cc("删除图书成功！", 0);
+        if (results.affectedRows !== 1) return res.cc("删除文章分类失败！");
+        res.cc("删除文章分类成功！", 0);
 
     })
 }
@@ -54,10 +54,10 @@ module.exports.getArticleCateById = (req, res) => {
     // res.send(req.params);
     db.query("select * from ev_article_cate where id=?", req.params.id, (err, results) => {
         if (err) return res.cc(err);
-        if (results.length !== 1) return res.cc("获取图书失败！");
+        if (results.length !== 1) return res.cc("获取文章分类失败！");
         res.send({
             status: 0,
-            message: "获取图书成功！",
+            message: "获取文章分类成功！",
             data: results[0]
         })
     })
@@ -84,8 +84,8 @@ module.exports.updateArticleCateById = (req, res) => {
         db.query("update ev_article_cate set ? where id=?", [req.body, req.body.id], (err, results) => {
             if (err) return res.cc(err);
             // 包含id不存在的情况
-            if (results.affectedRows !== 1) return res.cc("更新图书数据失败!");
-            res.cc("更新图书数据成功！", 0);
+            if (results.affectedRows !== 1) return res.cc("更新文章分类数据失败!");
+            res.cc("更新文章分类数据成功！", 0);
         })
     })
 } 
